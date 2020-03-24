@@ -51,7 +51,7 @@ public class Hive {
         this.bestFitness = this.swarm.get(0).getFitness();
     }
 
-    public void nextStep() throws InterruptedException {
+    public void nextStep() {
         this.bestAreasList = new ArrayList<>();
         this.bestAreasList.add(swarm.get(0));  //В начало списка должна добавиться первая пчела
 

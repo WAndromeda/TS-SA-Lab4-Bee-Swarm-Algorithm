@@ -3,7 +3,7 @@ import Entity.SphereBee;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         Statistic stat = new Statistic();
         int runNum = 0;
         //Максимальное количество итераций алгоритмы

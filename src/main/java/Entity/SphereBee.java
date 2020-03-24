@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import static Help.Point.Point.generateCoordinate;
 
 public class SphereBee extends Bee {
-    private static final int count = 4; //Количество координат
+    private static final int count = 10; //Количество координат
 
     public SphereBee(){
         super();
@@ -21,10 +21,7 @@ public class SphereBee extends Bee {
     public void calcFitness(){
         if (position.getCoordinates().size() <= 0)
             throw new RuntimeException("Пространство должен быть, как минимум, одномерным");
-        fitness = 0.0;
-        for (Double val : position.getCoordinates())
-            fitness -= val * val;
-
+        fitness = - position.getCoordinates().stream().mapToDouble((x) -> x*x).reduce(Double::sum).getAsDouble();
     }
 
     public static ArrayList<Double> getStartRange(){
